@@ -13,7 +13,7 @@ Windows (MSYS2 MinGW terminal)
 ``` 
 pacman -S make texinfo bison flex mingw-w64-x86_64-libarchive mingw-w64-x86_64-gcc mingw-w64-x86_64-curl mingw-w64-x86_64-python mingw-w64-x86_64-expat mingw-w64-x86_64-diffutils mingw-w64-x86_64-gmp mingw-w64-x86_64-mpfr mingw-w64-x86_64-mpc mingw-w64-x86_64-isl mingw-w64-x86_64-libc++ mingw-w64-x86_64-boost 
 ```
-**To build the toolchain, set the environment variables**
+**Before building the toolchain, set the environment variables**
 ```
 source Set_environment_variables.sh
 ```
