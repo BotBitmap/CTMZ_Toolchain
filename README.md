@@ -17,7 +17,7 @@ pacman -S make texinfo bison flex mingw-w64-x86_64-libarchive mingw-w64-x86_64-g
 ```
 source Set_environment_variables.sh
 ```
-**Setting the environment variables permanently, run this in CTMZ_Toolchain directory**
+**Setting the environment variables permanently, run this inside CTMZ_Toolchain directory**
 ```
 echo "export CTMZ_HOME=$PWD" >> ~/.bash_profile
 echo "export PATH=\$PATH:\$CTMZ_HOME/Toolchain-M68K/bin" >> ~/.bash_profile
