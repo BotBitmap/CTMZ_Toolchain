@@ -58,5 +58,5 @@ You may want to use this Toolchain outside of MSYS2 MinGW terminal on Windows, f
 
 Usage example:
 ```
-ldd m68k-elf-gcc
+ldd ./m68k-elf-gcc
 ```
