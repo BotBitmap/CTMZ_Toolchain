@@ -27,6 +27,8 @@ LINK_SDCC = https://codeload.github.com/swegener/sdcc/zip/master
 DOWN_SDCC = SDCC.zip
 PATH_SDCC = sdcc-master
 
+all: install_gcc-newlib_m68k install_sdcc_z80
+
 $(DOWN_BINUTILS-GDB):
 	curl $(LINK_BINUTILS-GDB) -o $(DOWN_BINUTILS-GDB)
 
@@ -66,6 +68,7 @@ install_gcc_m68k: $(PATH_BINUTILS-GDB) $(PATH_GCC) install_binutils-gdb_m68k
 	touch $@
 
 install_newlib_m68k: $(PATH_BINUTILS-GDB) $(PATH_GCC) $(PATH_NEWLIB) install_binutils-gdb_m68k install_gcc_m68k
+	cd $(PATH_NEWLIB)
 	mkdir -p $(PATH_NEWLIB)/build
 	cd $(PATH_NEWLIB)/build && ../configure --target=m68k-elf --prefix=$(CTMZ_HOME)/Toolchain-M68K --with-cpu=m68000 --enable-shared=no --disable-nls --disable-werror
 	make -j8 all -C $(PATH_NEWLIB)/build
@@ -100,4 +103,4 @@ clean:
 	rm -rf $(CTMZ_HOME)/Toolchain-Z80
 	rm -rf install_binutils-gdb_m68k install_gcc_m68k install_newlib_m68k install_gcc-newlib_m68k install_sdcc_z80
 
-.PHONY: clean
+.PHONY: clean all
